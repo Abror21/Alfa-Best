@@ -1,0 +1,137 @@
+.swiper-item__absolute {
+    position: absolute;
+}
+
+.swiper-pagination {
+    width: fit-content !important;
+    left: unset !important;
+    right: 9vw !important;
+    bottom: 4vw !important;
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+}
+
+.swiper-pagination-bullet {
+    width: 30px !important;
+    height: 30px !important;
+    background: transparent !important;
+    border: 1px solid white;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+}
+
+
+@media(max-width: 1440px) {
+    .swiper-pagination-bullet {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .swiper-pagination {
+        gap: 20px;
+    }
+}
+
+@media(max-width: 1080px) {
+    .swiper-pagination {
+        gap: 10px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+@media(max-width: 639px) {
+    .swiper-pagination {
+        bottom: unset !important;
+        top: 72% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .swiper-slide {
+        margin-bottom: 135px;
+    }
+
+    .swiper-item__absolute {
+        bottom: -22%;
+    }
+}
+
+@media(max-width: 600px) {
+    .swiper-pagination {
+        top: 68% !important;
+    }
+
+    .swiper-item__absolute {
+        bottom: -24%;
+    }
+}
+
+@media(max-width: 575px) {
+    .swiper-item__absolute {
+        bottom: -27%;
+    }
+
+    .swiper-pagination-bullet {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .swiper-pagination {
+        gap: 5px;
+    }
+}
+
+@media(max-width: 570px) {
+    .swiper-item__absolute {
+        bottom: -30%;
+    }
+
+    .swiper-slide {
+        margin-bottom: 116px;
+    }
+}
+
+@media(max-width: 425px) {
+    .swiper-item__absolute {
+        bottom: -34%;
+    }
+}
+
+@media(max-width: 390px) {
+    .swiper-pagination {
+        top: 66% !important;
+    }
+}
+
+@media(max-width: 375px) {
+    .swiper-item__absolute {
+        bottom: -36%;
+    }
+}
+
+@media(max-width: 360px) {
+    .swiper-pagination {
+        top: 64% !important;
+    }
+
+    .swiper-item__absolute {
+        bottom: -38%;
+    }
+}
+
+@media(max-width: 320px) {
+    .swiper-pagination {
+        top: 61% !important;
+    }
+
+    .swiper-item__absolute {
+        bottom: -40%;
+    }
+}
