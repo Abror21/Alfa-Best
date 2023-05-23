@@ -28,7 +28,7 @@ function App() {
           <Route path='/engineering' element={<Engineering />} />
           <Route path='/service' element={<Service />} />
           <Route path='/eating' element={<Eating />} />
-          <Route path='/transportaion' element={<Transportaion />} />
+          <Route path='/transportation' element={<Transportaion />} />
         </Routes>
         <Footer />
       </BrowserRouter>

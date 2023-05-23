@@ -1,0 +1,23 @@
+@media(min-width: 769px) {
+    .item a::after {
+        content: '';
+        position: absolute;
+        bottom: 26%;
+        left: 10%;
+        height: 2px;
+        width: 80%;
+        transform: scaleX(0);
+        background-color: #444;
+        transition: .3s;
+    }
+
+    .item a:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.item a {
+    position: relative;
+    display: block;
+    padding: 18px 0;
+}
