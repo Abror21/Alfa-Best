@@ -1,75 +1,17 @@
+import AboutCompany from './about-company'
+import History from './history'
 import Intro from './intro'
+import OurPurpose from './our-purpose'
+import Partners from './partners'
 
 const Home = () => {
   return (
     <>
       <Intro />
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
-      <h1>aslkdjflkasjld</h1>
+      <AboutCompany />
+      <OurPurpose />
+      <Partners />
+      <History />
     </>
   )
 }

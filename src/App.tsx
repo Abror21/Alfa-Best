@@ -11,11 +11,14 @@ import Home from './pages/home'
 import Purchase from './pages/purchase'
 import Service from './pages/service'
 import Transportaion from './pages/transportation'
+// const Test = await import('./components/Test')
+// import Test from './components/Test';
 
 function App() {
 
   return (
-    <>
+    <div>
+    {/* <Test /> */}
       <BrowserRouter>
         <Header />
         <Routes>
@@ -32,7 +35,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

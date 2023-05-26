@@ -11,6 +11,7 @@ export default {
         'img2': "url('./src/assets/images/intro2.jpg')",
         'img3': "url('./src/assets/images/intro3.jpg')",
         'img4': "url('./src/assets/images/intro4.jpg')",
+        'partners-bg': "url('./src/assets/images/partners-bg.jpg')",
       }
     },
   },
