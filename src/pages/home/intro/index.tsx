@@ -9,8 +9,7 @@ import Button from '../../../components/button';
 const Intro = () => {
 
     return (
-        <>
-
+        <div className='intro'>
             <Swiper
                 modules={[Autoplay, Pagination]}
                 loop={true}
@@ -81,7 +80,7 @@ const Intro = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-@media(min-width: 769px) {
+@media(min-width: 1024px) {
     .item a::after {
         content: '';
         position: absolute;
@@ -14,10 +14,4 @@
     .item a:hover::after {
         transform: scaleX(1);
     }
-}
-
-.item a {
-    position: relative;
-    display: block;
-    padding: 18px 0;
 }

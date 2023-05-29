@@ -11,9 +11,9 @@ import staff from '../../../assets/icons/about-company-staff.png'
 const AboutCompany = () => {
     return (
         <>
-            <div className="container px-[15px] mx-auto grid grid-cols-1 md:grid-cols-5 gap-20 items-center mt-[30px] lg:mt-[60px]">
-                <img src={img} alt="image" className="col-span-2 w-full" />
-                <div className="col-span-3">
+            <div className="container px-[15px] mx-auto grid grid-cols-1 md:grid-cols-5 gap-7 items-center mt-[30px] lg:mt-[60px]">
+                <img src={img} alt="image" className="md:col-span-2 w-full" />
+                <div className="md:col-span-3">
                     <DefaultTitle title="о нашей компании" />
                     <DefaultText
                         mb={30}

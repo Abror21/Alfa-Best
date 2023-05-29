@@ -1,13 +1,13 @@
-.swiper.mySwiper .swiper-wrapper {
+.history .swiper.mySwiper .swiper-wrapper {
     justify-content: flex-end;
     gap: 30px;
 }
 
-.swiper-slide.swiper-slide-thumb-active {
+.history .swiper-slide.swiper-slide-thumb-active {
     color: #28C79E !important;
 }
 
-.swiper.mySwiper .swiper-wrapper .swiper-slide {
+.history .swiper.mySwiper .swiper-wrapper .swiper-slide {
     width: fit-content !important;
     font-weight: 700;
     font-size: 45px;
@@ -15,8 +15,8 @@
     color: #8D9197;
 }
 
-.swiper.mySwiper2 .swiper-button-prev,
-.swiper.mySwiper2 .swiper-button-next {
+.history .swiper.mySwiper2 .swiper-button-prev,
+.history .swiper.mySwiper2 .swiper-button-next {
     top: 14%;
     background-repeat: no-repeat;
     background-size: auto;
@@ -27,33 +27,44 @@
     border: 1px solid #E7E5EA;
 }
 
-.swiper.mySwiper2 .swiper-button-prev {
+.history .swiper.mySwiper2 .swiper-button-prev {
     left: unset !important;
     right: 79px !important;
     background-image: url(../../../assets/icons/left-arrow.png);
 }
 
-.swiper.mySwiper2 .swiper-button-next {
+.history .swiper.mySwiper2 .swiper-button-next {
     right: 0;
     background-image: url(../../../assets/icons/right-arrow.png);
 }
 
-.swiper.mySwiper2 .swiper-button-prev::after,
-.swiper.mySwiper2 .swiper-button-next::after {
+.history .swiper.mySwiper2 .swiper-button-prev::after,
+.history .swiper.mySwiper2 .swiper-button-next::after {
     display: none;
 }
 
 @media(max-width: 767px) {
-    .swiper.mySwiper .swiper-wrapper {
+    .history .swiper.mySwiper .swiper-wrapper {
         justify-content: center;
         gap: 15px;
     }
 
-    .swiper.mySwiper2 .swiper-button-prev,
-    .swiper.mySwiper2 .swiper-button-next {
+    .history .swiper.mySwiper2 .swiper-button-prev,
+    .history .swiper.mySwiper2 .swiper-button-next {
         display: none;
     }
-    .swiper.mySwiper2 .swiper-button-prev {
+    .history .swiper.mySwiper2 .swiper-button-prev {
         right: 65px !important;
+    }
+}
+@media(max-width: 639px){
+
+    .history .swiper.mySwiper2{
+        margin-bottom: 0 !important;
+    }
+}
+@media(max-width: 375px){
+    .history .swiper.mySwiper .swiper-wrapper {
+        gap: 3px;
     }
 }

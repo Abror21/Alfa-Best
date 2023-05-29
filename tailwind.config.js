@@ -13,7 +13,7 @@ export default {
         'img4': "url('./src/assets/images/intro4.jpg')",
         'partners-bg': "url('./src/assets/images/partners-bg.jpg')",
       }
-    },
+    }
   },
   plugins: [],
 }
