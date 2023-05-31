@@ -1,4 +1,4 @@
-import icon from '../../../assets/icons/more-used-icon.png'
+import icon from '../../../assets/icons/logo.png'
 
 const Partners = () => {
     return (
@@ -7,7 +7,7 @@ const Partners = () => {
                 <div className='container mx-auto px-[15px]'>
                     <div className="w-[60%] sm:w-[40%] pt-3 sm:pt-5 md:pt-10">
                         <div className='flex items-center gap-[10px] mb-3 sm:mb-8 md:mb-10 lg:mb-14'>
-                             <img src={icon} alt="icon" className='w-6 sm:w-8 md:w-10' />
+                            <img src={icon} alt="icon" className='w-6 sm:w-8 md:w-10' />
                             <span className='text-white text-sm sm:text-base md:text-xl'>Alfa Best</span>
                         </div>
                         <h3 className='text-sm sm:text-base md:text-xl lg:text-3xl text-white font-bold mb-2 md:mb-[15px]'>Наши партнеры довольны нами</h3>

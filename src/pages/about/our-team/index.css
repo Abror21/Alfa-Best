@@ -1,0 +1,39 @@
+.our-team .swiper {
+    position: unset;
+}
+
+.our-team .swiper.mySwiper .swiper-button-prev,
+.our-team .swiper.mySwiper .swiper-button-next {
+    top: 50px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.our-team .swiper.mySwiper .swiper-button-prev {
+    left: unset !important;
+    right: 94px !important;
+    background-image: url(../../../assets/icons/left-arrow.png);
+}
+
+.our-team .swiper.mySwiper .swiper-button-next {
+    right: 15px;
+    background-image: url(../../../assets/icons/right-arrow.png);
+}
+
+.our-team .swiper.mySwiper .swiper-button-prev::after,
+.our-team .swiper.mySwiper .swiper-button-next::after {
+    display: none;
+}
+
+@media(max-width: 767px) {
+
+    .our-team .swiper.mySwiper .swiper-button-prev,
+    .our-team .swiper.mySwiper .swiper-button-next {
+        display: none;
+    }
+}

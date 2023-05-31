@@ -4,13 +4,21 @@ import classes from './index.module.css';
 import MenuItem from './menu-item';
 import logo from '../../assets/icons/logo.png';
 import menu from '../../assets/icons/menu.png';
+import axios from 'axios';
 
 const Header = () => {
+
+  const [topMenuList, setTopMenuList] = useState([]);
+  const [bottomMenuList, setBottomMenuList] = useState([]);
+
   const { pathname } = useLocation();
 
   const [scrollY, setScrollY] = useState<number>(0)
   const [height, setHeight] = useState<boolean>(false)
   const [menuVisible, setMenuVisible] = useState<boolean>(false)
+
+  console.log(topMenuList);
+
 
   useEffect(() => {
     const handleScroll = (): void => setScrollY(window.scrollY)
@@ -18,8 +26,32 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+  const fetchHomeMenu = async () => {
+    await axios.get('https://alfabest.napaautomotive.uz/api/home_content', {
+      headers: {
+        "Content-Type": "application/json",
+        "Accept-Language": "ru"
+      }
+    }).then(res => setTopMenuList(res.data?.datas)).catch(
+      err => console.log('Error', err)
+    )
+    await axios.get('https://alfabest.napaautomotive.uz/api/home_menu', {
+      headers: {
+        "Content-Type": "application/json",
+        "Accept-Language": "ru"
+      }
+    }).then(res => setBottomMenuList(res.data?.datas)).catch(
+      err => console.log('Error', err)
+    )
+  }
+
   useEffect(() => {
-    setMenuVisible(false)    
+    fetchHomeMenu()
+  }, [])
+
+  useEffect(() => {
+    setMenuVisible(false)
   }, [pathname])
 
   const isHome = pathname === '/';
@@ -28,8 +60,7 @@ const Header = () => {
 
   return (
     <>
-
-      <div className={`transition-all shadow-lg left-0 top-0 right-0 fixed z-[97] lg:backdrop-blur-sm ${bgColor}`}>
+      <div className={`transition-all ${scrollY > 0 ? 'shadow-lg' : ''} left-0 top-0 right-0 ${isHome ? 'fixed' : 'sticky'} z-[97] lg:backdrop-blur-sm ${bgColor}`}>
         <div className='container mx-auto px-[15px] flex lg:hidden items-center py-[15px]'>
           <Link to="/" className={`flex items-center gap-2 ${linkColor} font-bold text-base md:text-lg lg:text-xl`}>
             <img className='w-6 md:w-8 xl:w-10' src={logo} alt="Logo" />
@@ -65,11 +96,9 @@ const Header = () => {
               >&#x2715;</button>
             </div>
             <ul className='flex flex-col lg:flex-row gap-3 lg:gap-14 lg:items-center pl-2 sm:pl-3 lg:pl-0'>
-              <MenuItem style={`${linkColor}`} title='О компании' link='/about' />
-              <MenuItem style={`${linkColor}`} title='Карьера' link='/career' />
-              <MenuItem style={`${linkColor}`} title='Закупки' link='/purchase' />
-              <MenuItem style={`${linkColor}`} title='Сотрудничество' link='/cooperation' />
-              <MenuItem style={`${linkColor}`} title='Контакты' link='/contact' />
+              {
+                bottomMenuList.map(menu => <MenuItem key={menu['id']} style={`${linkColor}`} title={menu['title_ru']} link={`/${menu['link']}`} />)
+              }
               <li className={`hidden lg:flex gap-1 ${linkColor} text-xs sm:text-sm md:text-base`}>
                 <a href="!#">UZ</a>
                 |
@@ -84,10 +113,9 @@ const Header = () => {
           <div className={`lg:border-t lg:border-b transition-all ${height ? classes['header-links'] : 'h-0 lg:h-auto'} overflow-hidden`}>
             <div className='container mx-auto lg:px-[15px]'>
               <ul className='flex flex-col lg:flex-row gap-3 lg:gap-0 flex-wrap justify-between text-base pl-2 sm:pl-3 lg:pl-0'>
-                <MenuItem style={`${linkColor} text-[#808b9b] lg:text-[#1B2330]`} title='Инженерно-техническая эксплуатация' link='/engineering' />
-                <MenuItem style={`${linkColor} text-[#808b9b] lg:text-[#1B2330]`} title='Сервисное и бытовое обслуживание' link='/service' />
-                <MenuItem style={`${linkColor} text-[#808b9b] lg:text-[#1B2330]`} title='Корпоративное питание' link='/eating' />
-                <MenuItem style={`${linkColor} text-[#808b9b] lg:text-[#1B2330]`} title='Транспортные перевозки' link='/transportation' />
+                {
+                  topMenuList.map(menu => <MenuItem key={menu['id']} style={`${linkColor}`} title={menu['text_ru']} link={`/${menu['home_service_link']}`} />)
+                }
               </ul>
             </div>
           </div>

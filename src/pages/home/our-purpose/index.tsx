@@ -1,41 +1,52 @@
+import { useState, useEffect } from 'react';
 import DefaultText from "../../../components/default-text";
 import DefaultTitle from "../../../components/default-title";
-import img1 from '../../../assets/images/our-purpose-img1.png'
-import img2 from '../../../assets/images/our-purpose-img2.png'
-import img3 from '../../../assets/images/our-purpose-img3.png'
-import img4 from '../../../assets/images/our-purpose-img4.png'
 import PurposeItem from "./purpose-item";
 
 const OurPurpose = () => {
+
+    const [aimList, setAimList] = useState<[]>([]);
+    const [aimTitle, setAimTitle] = useState<{ id: number; title_ru: string; text_ru: string }>({ id: 0, title_ru: '', text_ru: '' });
+
+    useEffect(() => {
+        fetch('https://alfabest.napaautomotive.uz/api/aim_category', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": "ru"
+            }
+        })
+            .then(res => res.json())
+            .then(data => setAimList(data.datas))
+        fetch('https://alfabest.napaautomotive.uz/api/aim', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": "ru"
+            }
+        })
+            .then(res => res.json())
+            .then(data => setAimTitle(data.datas[0]))
+    }, [])
+    let count: number = 0;
     return (
         <div className="container mx-auto px-[15px] lg:gap-14 grid grid-cols-1 lg:grid-cols-5 mt-10 md:mt-[60px]">
             <div className="col-span-2">
-                <DefaultTitle title="Наша цель" />
-                <DefaultText
-                    text="Альфабест — предлагает комплексные решения по содержанию, клинингу, эксплуатации и техническому обслуживанию промышленных предприятий, объектов общественного питания, торговых и бизнес-центров, складских комплексов и технопарков. Мы поддерживаем высокие стандарты обслуживания и внедряем инновационные решения, применяя современные природосберегающие технологии."
-                />
+                <DefaultTitle title={aimTitle.title_ru} />
+                <DefaultText text={aimTitle.text_ru} />
             </div>
             <div className="col-span-3 pt-5">
-                <PurposeItem
-                    num='01'
-                    text="Сокращение издержек за счет оптимизации процессов"
-                    img={img1}
-                />
-                <PurposeItem
-                    num='02'
-                    text="Улучшение качества услуг за счет привлечения"
-                    img={img2}
-                />
-                <PurposeItem
-                    num='03'
-                    text="Концентрация усилий управленческой команды на основной деятельности"
-                    img={img3}
-                />
-                <PurposeItem
-                    num='04'
-                    text="Адаптированные под ваши потребности меню и услуги Основные этапы заключения договора"
-                    img={img4}
-                />
+                {
+                    aimList.map(aim => {
+                        count += 1
+                        return <PurposeItem
+                            key={aim['id']}
+                            num={`${count < 10 ? '0' + count : count}`}
+                            text={aim['text_ru']}
+                            img={`https://alfabest.napaautomotive.uz/storage/${aim['image']}`}
+                        />
+                    })
+                }
             </div>
         </div>
     )

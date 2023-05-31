@@ -3,7 +3,7 @@ import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import icon from '../../../assets/icons/more-used-icon.png';
+import icon from '../../../assets/icons/logo.png';
 import Button from '../../../components/button';
 
 const Intro = () => {

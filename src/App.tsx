@@ -21,13 +21,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/career' element={<Career />} />
+          <Route path='/carrier' element={<Career />} />
           <Route path='/purchase' element={<Purchase />} />
           <Route path='/cooperation' element={<Cooperation />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/engineering' element={<Engineering />} />
-          <Route path='/service' element={<Service />} />
-          <Route path='/eating' element={<Eating />} />
+          <Route path='/household' element={<Service />} />
+          <Route path='/catering' element={<Eating />} />
           <Route path='/transportation' element={<Transportaion />} />
         </Routes>
         <Footer />
