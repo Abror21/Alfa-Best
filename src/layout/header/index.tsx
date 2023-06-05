@@ -17,9 +17,6 @@ const Header = () => {
   const [height, setHeight] = useState<boolean>(false)
   const [menuVisible, setMenuVisible] = useState<boolean>(false)
 
-  console.log(topMenuList);
-
-
   useEffect(() => {
     const handleScroll = (): void => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll);
@@ -33,15 +30,18 @@ const Header = () => {
         "Content-Type": "application/json",
         "Accept-Language": "ru"
       }
-    }).then(res => setTopMenuList(res.data?.datas)).catch(
+    })
+    .then(res => setTopMenuList(res.data?.datas)).catch(
       err => console.log('Error', err)
     )
+
     await axios.get('https://alfabest.napaautomotive.uz/api/home_menu', {
       headers: {
         "Content-Type": "application/json",
         "Accept-Language": "ru"
       }
-    }).then(res => setBottomMenuList(res.data?.datas)).catch(
+    })
+    .then(res => setBottomMenuList(res.data?.datas)).catch(
       err => console.log('Error', err)
     )
   }
